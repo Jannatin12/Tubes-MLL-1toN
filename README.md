@@ -1,8 +1,12 @@
 # Tubes-MLL-1toN
 Tugas Besar Mata Kuliah Struktur Data
+
 SE-45-02
+
 Anggota Kelompok :
+
 Jannatin Nurrohmah    (1302213051)
+
 Novita Sabila Nugraha (1302213030)
 
 //File Tubes terdapat dalam branch master
