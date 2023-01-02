@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1672641673 source:d:\kuliah\c++\tubes_std-hotel\main.cpp
+	"hotel.h"
+
+1672641531 source:d:\kuliah\c++\tubes_std-hotel\hotel.cpp
+	"hotel.h"
+
+1672640087 d:\kuliah\c++\tubes_std-hotel\hotel.h
+	<iomanip>
+	<iostream>
+
