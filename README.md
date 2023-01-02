@@ -10,7 +10,9 @@ Jannatin Nurrohmah    (1302213051)
 Novita Sabila Nugraha (1302213030)
 
 //File Tubes terdapat dalam branch master
+
 Studi Kasus
+
 Pada suatu hotel terdapat Sistem Booking Hotel yang dapat mengelola data kamar hotel dan data pengunjung hotel yang dihubungkan dengan element kamar. Sistem Booking Hotel tersebut dapat : 
 - menampilkan data kamar hotel yang tersedia
 - melakukan booking kamar
