@@ -88,9 +88,9 @@ void inputKamar(listKamar &L, adr_kamar p) {
 
     while (q != NULL) {
       if (info(p).nomor < info(q).nomor) {
-        if (q == first(L)) {
+        if (q == first(L)) { // insert first
           insertFirstKamar(L, p);
-        } else {
+        } else { // insert after
           next(prec) = p;
           next(p) = q;
         }
@@ -99,7 +99,45 @@ void inputKamar(listKamar &L, adr_kamar p) {
       prec = q;
       q = next(q);
     }
-    next(prec) = p;
+    next(prec) = p; // insert last
+  }
+}
+
+void deleteFirstKamar(listKamar &L, adr_kamar &p) {
+  if (first(L) == NULL) {
+    cout << endl << "List Kosong" << endl << endl;
+  } else {
+    p = first(L);
+    first(L) = next(first(L));
+    next(p) = NULL;
+  }
+}
+
+void deleteLastKamar(adr_kamar &q) { next(q) = NULL; } // khusus
+
+void deleteAfterKamar(listKamar &L, adr_kamar prec, adr_kamar &p) {
+  p = next(prec);
+  next(prec) = next(next(prec));
+  next(p) = NULL;
+}
+
+void deleteKamar(listKamar &L, adr_kamar p) {
+  adr_kamar prec;
+  adr_kamar dihapus;
+  adr_kamar k = first(L);
+  if (k == p) { // delete first
+    deleteFirstKamar(L, dihapus);
+  } else {
+    while (next(next(k)) != NULL) { // delete after
+      if (next(k) == p) {
+        deleteAfterKamar(L, k, dihapus);
+        break;
+      }
+      k = next(k);
+    }
+    if (next(k) == p) { // delete last
+      deleteLastKamar(k);
+    }
   }
 }
 
@@ -151,4 +189,41 @@ adr_pengunjung searchPengunjung(listKamar L, string nik) {
     q = next(q);
   }
   return NULL;
+}
+
+int jumlahKamarTersedia(listKamar L) {
+  adr_kamar k = first(L);
+  int jumlah = 0;
+  while (k != NULL) {
+    if (nextPengunjung(k) == NULL) {
+      jumlah++;
+    }
+    k = next(k);
+  }
+  return jumlah;
+}
+
+int totalPengunjung(listKamar L) {
+  adr_kamar k = first(L);
+  adr_pengunjung p;
+  int jumlah = 0;
+  while (k != NULL) {
+    p = nextPengunjung(k);
+    while (p != NULL) {
+      jumlah++;
+      p = next(p);
+    }
+    k = next(k);
+  }
+  return jumlah;
+}
+
+int totalKamar(listKamar L) {
+  adr_kamar k = first(L);
+  int jumlah = 0;
+  while (k != NULL) {
+    jumlah++;
+    k = next(k);
+  }
+  return jumlah;
 }

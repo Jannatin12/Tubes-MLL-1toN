@@ -50,13 +50,21 @@ adr_pengunjung createElemenPengunjung(infoP data);
 void insertFirstKamar(listKamar &L, adr_kamar p);
 void showDataKamar(listKamar L);
 void showKamar(listKamar L);
-
 void inputKamar(listKamar &l, adr_kamar p);
+
+void deleteFirstKamar(listKamar &L, adr_kamar &p);
+void deleteLastKamar(listKamar &L, adr_kamar &p);
+void deleteAfterKamar(listKamar &L, adr_kamar prec, adr_kamar &p);
+void deleteKamar(listKamar &L, adr_kamar p);
 void deletePengunjung(adr_kamar &p);
+
 void insertSingle(adr_kamar &p, adr_pengunjung q);
 void insertDouble(adr_kamar &p, adr_pengunjung q1, adr_pengunjung q2);
 adr_kamar searchKamar(listKamar L, int nomor, string tipe);
 adr_kamar searchNomorKamar(listKamar L, int nomor);
 adr_pengunjung searchPengunjung(listKamar L, string nik);
+int jumlahKamarTersedia(listKamar L);
+int totalPengunjung(listKamar L);
+int totalKamar(listKamar L);
 
 #endif // HOTEL_H_INCLUDED
